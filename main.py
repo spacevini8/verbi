@@ -1,4 +1,8 @@
-input = "essendo"  # input("prompt: ")
+import essere
+
+input = "io ero stato"
+
+#input = input("prompt: ")
 
 parts = input.split(" ")
 
@@ -41,152 +45,30 @@ tempo = "presente"
 if is_compound:
     tempo = "passato prossimo"
 
-essere_indicativo_presente = {
-    "sono": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "sei": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "é": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "siamo": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "siete": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "sono": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-}
+#from essere import def_essere_indicativo_presente
+
+indicativo_presente = essere.def_essere_indicativo_presente(verbo, modo, tempo)
 
 tempo = "imperfetto"
 
 if is_compound:
     tempo = "trapassato prossimo"
 
-essere_indicativo_imperfetto = {
-    "ero": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "eri": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "era": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "eravamo": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "eravate": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "erano": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-}
+indicativo_imperfetto = essere.def_essere_indicativo_imperfetto(verbo, modo, tempo)
 
 tempo = "passato remoto"
 
 if is_compound:
     tempo = "trapassato remoto"
 
-essere_indicativo_passato_remoto = {
-    "fui": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "fosti": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "fu": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "fummo": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "foste": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "furono": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-}
+indicativo_passato_remoto = essere.def_essere_indicativo_passato_remoto(verbo, modo, tempo)
 
 tempo = "futuro semplice"
 
 if is_compound:
     tempo = "futuro anteriore"
 
-essere_indicativo_futuro_semplice = {
-    "saró": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "sarai": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "sará": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "saremo": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "sarete": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "saranno": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-}
+indicativo_futuro_semplice = essere.def_essere_indicativo_futuro_semplice(verbo, modo, tempo)
 
 modo = "congiuntivo"
 
@@ -195,38 +77,7 @@ tempo = "presente"
 if is_compound:
     tempo = "passato"
 
-essere_congiuntivo_presente = {
-    "sia": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "sia": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "sia": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "siamo": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "siate": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "siano": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-}
+congiuntivo_presente = essere.def_essere_congiuntivo_presente(verbo, modo, tempo)
 
 modo = "congiuntivo"
 
@@ -235,38 +86,7 @@ tempo = "imperfetto"
 if is_compound:
     tempo = "trapassato"
 
-essere_congiuntivo_imperfetto = {
-    "fossi": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "fossi": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "fosse": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "fossimo": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "foste": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "fossero": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-}
+congiuntivo_imperfetto = essere.def_essere_congiuntivo_imperfetto(verbo, modo, tempo)
 
 modo = "condizionale"
 
@@ -275,75 +95,13 @@ tempo = "presente"
 if is_compound:
     tempo = "passato"
 
-essere_condizionale_presente = {
-    "sarei": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "saresti": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "sarebbe": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "saremmo": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "sareste": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "sarebbero": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-}
+condizionale_presente = essere.def_essere_condizionale_presente(verbo, modo, tempo)
 
 modo = "imperativo"
 
 tempo = "presente"
 
-essere_imperativo_presente = {
-    "sarei": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "tu": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "egli": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "noi": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "voi": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-    "essi": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-}
+imperativo_presente = essere.def_essere_imperativo_presente(verbo, modo, tempo)
 
 modo = "infinito"
 
@@ -352,37 +110,19 @@ tempo = "presente"
 if is_compound_indefiniti:
     tempo = "passato"
 
-essere_infinito_presente = {
-    "essere": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-}
+infinito_presente = essere.def_essere_infinito_presente(verbo, modo, tempo)
 
 modo = "participio"
 
 tempo = "presente"
 
-essere_participio_presente = {
-    "ente": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-}
+participio_presente = essere.def_essere_participio_presente(verbo, modo, tempo)
 
 modo = "participio"
 
 tempo = "passato"
 
-essere_participio_passato = {
-    "stato": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-}
+participio_passato = essere.def_essere_participio_passato(verbo, modo, tempo)
 
 modo = "gerundio"
 
@@ -391,66 +131,60 @@ tempo = "presente"
 if is_compound_indefiniti:
     tempo = "passato"
 
-essere_gerundio_presente = {
-    "essendo": {
-        "verbo": verbo,
-        "modo": modo,
-        "tempo": tempo,
-    },
-}
+gerundio_presente = essere.def_essere_gerundio_presente(verbo, modo, tempo)
 
-if verb in essere_indicativo_presente and is_congiuntivo == False:
-    print("verbo:", essere_indicativo_presente[verb]["verbo"])
-    print("modo:", essere_indicativo_presente[verb]["modo"])
-    print("tempo:", essere_indicativo_presente[verb]["tempo"])
-elif verb in essere_indicativo_imperfetto and is_congiuntivo == False:
-    print("verbo:", essere_indicativo_imperfetto[verb]["verbo"])
-    print("modo:", essere_indicativo_imperfetto[verb]["modo"])
-    print("tempo:", essere_indicativo_imperfetto[verb]["tempo"])
-elif verb in essere_indicativo_passato_remoto and is_congiuntivo == False:
-    print("verbo:", essere_indicativo_passato_remoto[verb]["verbo"])
-    print("modo:", essere_indicativo_passato_remoto[verb]["modo"])
-    print("tempo:", essere_indicativo_passato_remoto[verb]["tempo"])
-elif verb in essere_indicativo_futuro_semplice and is_congiuntivo == False:
-    print("verbo:", essere_indicativo_futuro_semplice[verb]["verbo"])
-    print("modo:", essere_indicativo_futuro_semplice[verb]["modo"])
-    print("tempo:", essere_indicativo_futuro_semplice[verb]["tempo"])
-elif verb in essere_congiuntivo_presente and is_congiuntivo == True:
-    print("verbo:", essere_congiuntivo_presente[verb]["verbo"])
-    print("modo:", essere_congiuntivo_presente[verb]["modo"])
-    print("tempo:", essere_congiuntivo_presente[verb]["tempo"])
-elif verb in essere_congiuntivo_imperfetto and is_congiuntivo == True:
-    print("verbo:", essere_congiuntivo_imperfetto[verb]["verbo"])
-    print("modo:", essere_congiuntivo_imperfetto[verb]["modo"])
-    print("tempo:", essere_congiuntivo_imperfetto[verb]["tempo"])
-elif verb in essere_condizionale_presente and is_congiuntivo == False:
-    print("verbo:", essere_condizionale_presente[verb]["verbo"])
-    print("modo:", essere_condizionale_presente[verb]["modo"])
-    print("tempo:", essere_condizionale_presente[verb]["tempo"])
-elif verb in essere_imperativo_presente and is_congiuntivo == False:
-    print("verbo:", essere_imperativo_presente[verb]["verbo"])
-    print("modo:", essere_imperativo_presente[verb]["modo"])
-    print("tempo:", essere_imperativo_presente[verb]["tempo"])
-elif pronoun in essere_infinito_presente and is_congiuntivo == False:
-    print("verbo:", essere_infinito_presente[pronoun]["verbo"])
-    print("modo:", essere_infinito_presente[pronoun]["modo"])
-    print("tempo:", essere_infinito_presente[pronoun]["tempo"])
-elif verb in essere_participio_presente and is_congiuntivo == False:
-    print("verbo:", essere_participio_presente[verb]["verbo"])
-    print("modo:", essere_participio_presente[verb]["modo"])
-    print("tempo:", essere_participio_presente[verb]["tempo"])
-elif verb in essere_participio_passato and is_congiuntivo == False:
-    print("verbo:", essere_participio_passato[verb]["verbo"])
-    print("modo:", essere_participio_passato[verb]["modo"])
-    print("tempo:", essere_participio_passato[verb]["tempo"])
-elif verb in essere_gerundio_presente and is_congiuntivo == False:
-    print("verbo:", essere_gerundio_presente[verb]["verbo"])
-    print("modo:", essere_gerundio_presente[verb]["modo"])
-    print("tempo:", essere_gerundio_presente[verb]["tempo"])
+if verb in indicativo_presente and is_congiuntivo == False:
+    print("verbo:", indicativo_presente[verb]["verbo"])
+    print("modo:", indicativo_presente[verb]["modo"])
+    print("tempo:", indicativo_presente[verb]["tempo"])
+elif verb in indicativo_imperfetto and is_congiuntivo == False:
+    print("verbo:", indicativo_imperfetto[verb]["verbo"])
+    print("modo:", indicativo_imperfetto[verb]["modo"])
+    print("tempo:", indicativo_imperfetto[verb]["tempo"])
+elif verb in indicativo_passato_remoto and is_congiuntivo == False:
+    print("verbo:", indicativo_passato_remoto[verb]["verbo"])
+    print("modo:", indicativo_passato_remoto[verb]["modo"])
+    print("tempo:", indicativo_passato_remoto[verb]["tempo"])
+elif verb in indicativo_futuro_semplice and is_congiuntivo == False:
+    print("verbo:", indicativo_futuro_semplice[verb]["verbo"])
+    print("modo:", indicativo_futuro_semplice[verb]["modo"])
+    print("tempo:", indicativo_futuro_semplice[verb]["tempo"])
+elif verb in congiuntivo_presente and is_congiuntivo == True:
+    print("verbo:", congiuntivo_presente[verb]["verbo"])
+    print("modo:", congiuntivo_presente[verb]["modo"])
+    print("tempo:", congiuntivo_presente[verb]["tempo"])
+elif verb in congiuntivo_imperfetto and is_congiuntivo == True:
+    print("verbo:", congiuntivo_imperfetto[verb]["verbo"])
+    print("modo:", congiuntivo_imperfetto[verb]["modo"])
+    print("tempo:", congiuntivo_imperfetto[verb]["tempo"])
+elif verb in condizionale_presente and is_congiuntivo == False:
+    print("verbo:", condizionale_presente[verb]["verbo"])
+    print("modo:", condizionale_presente[verb]["modo"])
+    print("tempo:", condizionale_presente[verb]["tempo"])
+elif verb in imperativo_presente and is_congiuntivo == False:
+    print("verbo:", imperativo_presente[verb]["verbo"])
+    print("modo:", imperativo_presente[verb]["modo"])
+    print("tempo:", imperativo_presente[verb]["tempo"])
+elif pronoun in infinito_presente and is_congiuntivo == False:
+    print("verbo:", infinito_presente[pronoun]["verbo"])
+    print("modo:", infinito_presente[pronoun]["modo"])
+    print("tempo:", infinito_presente[pronoun]["tempo"])
+elif verb in participio_presente and is_congiuntivo == False:
+    print("verbo:", participio_presente[verb]["verbo"])
+    print("modo:", participio_presente[verb]["modo"])
+    print("tempo:", participio_presente[verb]["tempo"])
+elif verb in participio_passato and is_congiuntivo == False:
+    print("verbo:", participio_passato[verb]["verbo"])
+    print("modo:", participio_passato[verb]["modo"])
+    print("tempo:", participio_passato[verb]["tempo"])
+elif verb in gerundio_presente and is_congiuntivo == False:
+    print("verbo:", gerundio_presente[verb]["verbo"])
+    print("modo:", gerundio_presente[verb]["modo"])
+    print("tempo:", gerundio_presente[verb]["tempo"])
 else:
     print("errore_verbo")
 
-essere_indicativo_presente_pronome = {
+pronome = {
     "io": "1a singolare",
     "tu": "2a singolare",
     "egli": "3a singolare",
@@ -459,19 +193,35 @@ essere_indicativo_presente_pronome = {
     "essi": "3a plurale",
 }
 
-essere_imperativo_presente_pronome = {
-    "sii": "2a singolare",
-    "sia": "3a singolare",
-    "siamo": "1a plurale",
-    "siate": "2a plurale",
-    "siano": "3a plurale",
-}
+imperativo_presente_pronome = essere.def_essere_imperativo_presente_pronome(verbo, modo, tempo)
 
-if pronoun in essere_indicativo_presente_pronome:
-    print(f"persona: {essere_indicativo_presente_pronome[pronoun]}")
-elif pronoun in essere_imperativo_presente_pronome:
-    print(f"persona: {essere_imperativo_presente_pronome[pronoun]}")
+if pronoun in pronome:
+    print(f"persona: {pronome[pronoun]}")
+elif pronoun in imperativo_presente_pronome:
+    print(f"persona: {imperativo_presente_pronome[pronoun]}")
 elif modo == "infinito" or modo == "participio" or modo == "gerundio":
     print("persona: 1a singolare")
 else:
     print("errore_pronome")
+
+waltuh = """
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢺⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠆⠜⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⠿⠿⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠻⣿⣿⣿⣿⣿
+⣿⣿⡏⠁⠀⠀⠀⠀⠀⣀⣠⣤⣤⣶⣶⣶⣶⣶⣦⣤⡄⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿
+⣿⣿⣷⣄⠀⠀⠀⢠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⡧⠇⢀⣤⣶⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣾⣮⣭⣿⡻⣽⣒⠀⣤⣜⣭⠐⢐⣒⠢⢰⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣏⣿⣿⣿⣿⣿⣿⡟⣾⣿⠂⢈⢿⣷⣞⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣷⣶⣾⡿⠿⣿⠗⠈⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠻⠋⠉⠑⠀⠀⢘⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⡿⠟⢹⣿⣿⡇⢀⣶⣶⠴⠶⠀⠀⢽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⡿⠀⠀⢸⣿⣿⠀⠀⠣⠀⠀⠀⠀⠀⡟⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⡿⠟⠋⠀⠀⠀⠀⠹⣿⣧⣀⠀⠀⠀⠀⡀⣴⠁⢘⡙⢿⣿⣿⣿⣿⣿⣿⣿⣿
+⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⢿⠗⠂⠄⠀⣴⡟⠀⠀⡃⠀⠉⠉⠟⡿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢷⠾⠛⠂⢹⠀⠀⠀⢡⠀⠀⠀⠀⠀⠙⠛⠿⢿
+"""
+
+if input == ("let's cook") or input == ("we need to cook") or input == ("jesse, we need to cook"):
+    print(waltuh)
