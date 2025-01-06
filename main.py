@@ -1,8 +1,15 @@
-import essere
+input_verbo = input("prompt: ")
 
-input = "io ero stato"
+if input_verbo == "essere":
+    import essere as def_verbo
+    verbo = "essere"
+    #input = "io sono"
+else:
+    import avere as def_verbo
+    verbo = "avere"
+    #input = "io ho"
 
-#input = input("prompt: ")
+input = input("prompt: ")
 
 parts = input.split(" ")
 
@@ -36,8 +43,6 @@ print(pronoun)
 
 print(verb)
 
-verbo = "essere"
-
 modo = "indicativo"
 
 tempo = "presente"
@@ -47,28 +52,28 @@ if is_compound:
 
 #from essere import def_essere_indicativo_presente
 
-indicativo_presente = essere.def_essere_indicativo_presente(verbo, modo, tempo)
+indicativo_presente = def_verbo.def_indicativo_presente(verbo, modo, tempo)
 
 tempo = "imperfetto"
 
 if is_compound:
     tempo = "trapassato prossimo"
 
-indicativo_imperfetto = essere.def_essere_indicativo_imperfetto(verbo, modo, tempo)
+indicativo_imperfetto = def_verbo.def_indicativo_imperfetto(verbo, modo, tempo)
 
 tempo = "passato remoto"
 
 if is_compound:
     tempo = "trapassato remoto"
 
-indicativo_passato_remoto = essere.def_essere_indicativo_passato_remoto(verbo, modo, tempo)
+indicativo_passato_remoto = def_verbo.def_indicativo_passato_remoto(verbo, modo, tempo)
 
 tempo = "futuro semplice"
 
 if is_compound:
     tempo = "futuro anteriore"
 
-indicativo_futuro_semplice = essere.def_essere_indicativo_futuro_semplice(verbo, modo, tempo)
+indicativo_futuro_semplice = def_verbo.def_indicativo_futuro_semplice(verbo, modo, tempo)
 
 modo = "congiuntivo"
 
@@ -77,7 +82,7 @@ tempo = "presente"
 if is_compound:
     tempo = "passato"
 
-congiuntivo_presente = essere.def_essere_congiuntivo_presente(verbo, modo, tempo)
+congiuntivo_presente = def_verbo.def_congiuntivo_presente(verbo, modo, tempo)
 
 modo = "congiuntivo"
 
@@ -86,7 +91,7 @@ tempo = "imperfetto"
 if is_compound:
     tempo = "trapassato"
 
-congiuntivo_imperfetto = essere.def_essere_congiuntivo_imperfetto(verbo, modo, tempo)
+congiuntivo_imperfetto = def_verbo.def_congiuntivo_imperfetto(verbo, modo, tempo)
 
 modo = "condizionale"
 
@@ -95,13 +100,13 @@ tempo = "presente"
 if is_compound:
     tempo = "passato"
 
-condizionale_presente = essere.def_essere_condizionale_presente(verbo, modo, tempo)
+condizionale_presente = def_verbo.def_condizionale_presente(verbo, modo, tempo)
 
 modo = "imperativo"
 
 tempo = "presente"
 
-imperativo_presente = essere.def_essere_imperativo_presente(verbo, modo, tempo)
+imperativo_presente = def_verbo.def_imperativo_presente(verbo, modo, tempo)
 
 modo = "infinito"
 
@@ -110,19 +115,19 @@ tempo = "presente"
 if is_compound_indefiniti:
     tempo = "passato"
 
-infinito_presente = essere.def_essere_infinito_presente(verbo, modo, tempo)
+infinito_presente = def_verbo.def_infinito_presente(verbo, modo, tempo)
 
 modo = "participio"
 
 tempo = "presente"
 
-participio_presente = essere.def_essere_participio_presente(verbo, modo, tempo)
+participio_presente = def_verbo.def_participio_presente(verbo, modo, tempo)
 
 modo = "participio"
 
 tempo = "passato"
 
-participio_passato = essere.def_essere_participio_passato(verbo, modo, tempo)
+participio_passato = def_verbo.def_participio_passato(verbo, modo, tempo)
 
 modo = "gerundio"
 
@@ -131,7 +136,7 @@ tempo = "presente"
 if is_compound_indefiniti:
     tempo = "passato"
 
-gerundio_presente = essere.def_essere_gerundio_presente(verbo, modo, tempo)
+gerundio_presente = def_verbo.def_gerundio_presente(verbo, modo, tempo)
 
 if verb in indicativo_presente and is_congiuntivo == False:
     print("verbo:", indicativo_presente[verb]["verbo"])
@@ -193,7 +198,7 @@ pronome = {
     "essi": "3a plurale",
 }
 
-imperativo_presente_pronome = essere.def_essere_imperativo_presente_pronome(verbo, modo, tempo)
+imperativo_presente_pronome = def_verbo.def_imperativo_presente_pronome(verbo, modo, tempo)
 
 if pronoun in pronome:
     print(f"persona: {pronome[pronoun]}")

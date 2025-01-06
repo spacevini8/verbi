@@ -1,4 +1,4 @@
-def def_essere_indicativo_presente(verbo, modo, tempo):
+def def_indicativo_presente(verbo, modo, tempo):
     return {
         "sono": {
             "verbo": verbo,
@@ -32,7 +32,7 @@ def def_essere_indicativo_presente(verbo, modo, tempo):
         },
     }
 
-def def_essere_indicativo_imperfetto(verbo, modo, tempo): 
+def def_indicativo_imperfetto(verbo, modo, tempo): 
     return {
         "ero": {
             "verbo": verbo,
@@ -66,7 +66,7 @@ def def_essere_indicativo_imperfetto(verbo, modo, tempo):
         },
     }
 
-def def_essere_indicativo_passato_remoto(verbo, modo, tempo): 
+def def_indicativo_passato_remoto(verbo, modo, tempo): 
     return {
         "fui": {
             "verbo": verbo,
@@ -100,7 +100,7 @@ def def_essere_indicativo_passato_remoto(verbo, modo, tempo):
         },
     }
 
-def def_essere_indicativo_futuro_semplice(verbo, modo, tempo): 
+def def_indicativo_futuro_semplice(verbo, modo, tempo): 
     return {
         "saró": {
             "verbo": verbo,
@@ -134,7 +134,7 @@ def def_essere_indicativo_futuro_semplice(verbo, modo, tempo):
         },
     }
 
-def def_essere_congiuntivo_presente(verbo, modo, tempo): 
+def def_congiuntivo_presente(verbo, modo, tempo): 
     return {
         "sia": {
             "verbo": verbo,
@@ -168,7 +168,7 @@ def def_essere_congiuntivo_presente(verbo, modo, tempo):
         },
     }
 
-def def_essere_congiuntivo_imperfetto (verbo, modo, tempo):
+def def_congiuntivo_imperfetto (verbo, modo, tempo):
     return {
         "fossi": {
             "verbo": verbo,
@@ -202,7 +202,7 @@ def def_essere_congiuntivo_imperfetto (verbo, modo, tempo):
         },
     }
 
-def def_essere_condizionale_presente(verbo, modo, tempo):
+def def_condizionale_presente(verbo, modo, tempo):
     return {
         "sarei": {
             "verbo": verbo,
@@ -236,7 +236,7 @@ def def_essere_condizionale_presente(verbo, modo, tempo):
         },
     }
 
-def def_essere_imperativo_presente(verbo, modo, tempo): 
+def def_imperativo_presente(verbo, modo, tempo): 
     return {
         "sarei": {
             "verbo": verbo,
@@ -270,7 +270,7 @@ def def_essere_imperativo_presente(verbo, modo, tempo):
         },
     }
 
-def def_essere_infinito_presente(verbo, modo, tempo): 
+def def_infinito_presente(verbo, modo, tempo): 
     return {
         "essere": {
             "verbo": verbo,
@@ -279,7 +279,7 @@ def def_essere_infinito_presente(verbo, modo, tempo):
         },
     }
 
-def def_essere_participio_presente(verbo, modo, tempo): 
+def def_participio_presente(verbo, modo, tempo): 
     return {
         "ente": {
             "verbo": verbo,
@@ -288,7 +288,7 @@ def def_essere_participio_presente(verbo, modo, tempo):
         },
     }
 
-def def_essere_participio_passato(verbo, modo, tempo): 
+def def_participio_passato(verbo, modo, tempo): 
     return {
         "stato": {
             "verbo": verbo,
@@ -297,7 +297,7 @@ def def_essere_participio_passato(verbo, modo, tempo):
         },
     }
 
-def def_essere_gerundio_presente(verbo, modo, tempo): 
+def def_gerundio_presente(verbo, modo, tempo): 
     return {
         "essendo": {
             "verbo": verbo,
@@ -306,7 +306,7 @@ def def_essere_gerundio_presente(verbo, modo, tempo):
         },
     }
 
-def def_essere_imperativo_presente_pronome(verbo, modo, tempo): 
+def def_imperativo_presente_pronome(verbo, modo, tempo): 
     return {
         "sii": "2a singolare",
         "sia": "3a singolare",
