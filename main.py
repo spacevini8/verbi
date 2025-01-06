@@ -1,13 +1,41 @@
-input_verbo = input("prompt: ")
+print("seleziona verbo:")
+print("1) essere")
+print("2) avere")
+print("3) amare")
+print("4) sentire")
+print("5) temere")
 
-if input_verbo == "essere":
+input_verbo = input("numero del verbo: ")
+
+is_ausiliare = False
+
+if input_verbo == "1":
     import essere as def_verbo
     verbo = "essere"
+    is_ausiliare = True
     #input = "io sono"
-else:
+elif input_verbo == "2":
     import avere as def_verbo
     verbo = "avere"
+    is_ausiliare = True
     #input = "io ho"
+elif input_verbo == "3":
+    import amare as def_verbo
+    verbo = "amare"
+    #input = "io ho"
+    #print("WIP")
+elif input_verbo == "4":
+    import sentire as def_verbo
+    verbo = "sentire"
+    #input = "io ho"
+    #print("WIP")
+elif input_verbo == "5":
+    import temere as def_verbo
+    verbo = "temere"
+    #input = "io ho"
+    #print("WIP")
+else:
+    print("input e invalido")
 
 input = input("prompt: ")
 
@@ -33,6 +61,10 @@ is_compound = False
 
 if len(parts) > 2:
     is_compound = True
+
+if len(parts) > 2 and is_ausiliare == False:
+    is_compound = True
+    import avere as def_verbo
 
 if len(parts) > 1:
     is_compound_indefiniti = True
