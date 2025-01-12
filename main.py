@@ -13,6 +13,8 @@ while True:
 
     is_ausiliare = False
 
+    puo_essere_passivo = False
+
     if input_verbo == "1":
         import essere as def_verbo
         verbo = "essere"
@@ -26,16 +28,19 @@ while True:
     elif input_verbo == "3":
         import amare as def_verbo
         verbo = "amare"
+        puo_essere_passivo = True
         #input = "io ho"
         #print("WIP")
     elif input_verbo == "4":
         import sentire as def_verbo
         verbo = "sentire"
+        puo_essere_passivo = True
         #input = "io ho"
         #print("WIP")
     elif input_verbo == "5":
         import temere as def_verbo
         verbo = "temere"
+        puo_essere_passivo = True
         #input = "io ho"
         #print("WIP")
     elif input_verbo == "q":
@@ -43,6 +48,21 @@ while True:
     else:
         print("input e invalido")
         continue
+
+    passivo = False
+
+    if puo_essere_passivo == True:
+        print("1) attivo")
+        print("2) passivo")
+        input_att_pas = input("attivo o passivo? ")
+        if input_att_pas == "1":
+            passivo = False
+            print("attivo")
+        elif input_att_pas == "2":
+            passivo = True
+            print("passivo")
+        else:
+            sys.exit(0)
 
     input_question = input("verbo: ")
 
@@ -64,6 +84,8 @@ while True:
     else:
         verb = parts[0]
 
+    is_compound_passivo = False
+
     is_compound = False
 
     if len(parts) > 2:
@@ -73,8 +95,18 @@ while True:
         is_compound = True
         import avere as def_verbo
 
+    if passivo == True:
+        import essere as def_verbo
+        is_compound = False
+
+    if len(parts) > 3 and passivo == True:
+        is_compound_passivo = True
+
     if len(parts) > 1:
         is_compound_indefiniti = True
+    
+    if len(parts) > 2:
+        is_compound_indefiniti_passivo = True
 
     print(parts)
 
@@ -86,7 +118,9 @@ while True:
 
     tempo = "presente"
 
-    if is_compound:
+    if is_compound == True:
+        tempo = "passato prossimo"
+    elif is_compound_passivo == True:
         tempo = "passato prossimo"
 
     #from essere import def_essere_indicativo_presente
@@ -95,21 +129,27 @@ while True:
 
     tempo = "imperfetto"
 
-    if is_compound:
+    if is_compound == True:
+        tempo = "trapassato prossimo"
+    elif is_compound_passivo == True:
         tempo = "trapassato prossimo"
 
     indicativo_imperfetto = def_verbo.def_indicativo_imperfetto(verbo, modo, tempo)
 
     tempo = "passato remoto"
 
-    if is_compound:
+    if is_compound == True:
+        tempo = "trapassato remoto"
+    elif is_compound_passivo == True:
         tempo = "trapassato remoto"
 
     indicativo_passato_remoto = def_verbo.def_indicativo_passato_remoto(verbo, modo, tempo)
 
     tempo = "futuro semplice"
 
-    if is_compound:
+    if is_compound == True:
+        tempo = "futuro anteriore"
+    elif is_compound_passivo == True:
         tempo = "futuro anteriore"
 
     indicativo_futuro_semplice = def_verbo.def_indicativo_futuro_semplice(verbo, modo, tempo)
@@ -118,7 +158,9 @@ while True:
 
     tempo = "presente"
 
-    if is_compound:
+    if is_compound == True:
+        tempo = "passato"
+    elif is_compound_passivo == True:
         tempo = "passato"
 
     congiuntivo_presente = def_verbo.def_congiuntivo_presente(verbo, modo, tempo)
@@ -127,7 +169,9 @@ while True:
 
     tempo = "imperfetto"
 
-    if is_compound:
+    if is_compound == True:
+        tempo = "trapassato"
+    elif is_compound_passivo == True:
         tempo = "trapassato"
 
     congiuntivo_imperfetto = def_verbo.def_congiuntivo_imperfetto(verbo, modo, tempo)
@@ -136,7 +180,9 @@ while True:
 
     tempo = "presente"
 
-    if is_compound:
+    if is_compound == True:
+        tempo = "passato"
+    elif is_compound_passivo == True:
         tempo = "passato"
 
     condizionale_presente = def_verbo.def_condizionale_presente(verbo, modo, tempo)
@@ -151,7 +197,9 @@ while True:
 
     tempo = "presente"
 
-    if is_compound_indefiniti:
+    if is_compound_indefiniti == True:
+        tempo = "passato"
+    if is_compound_indefiniti_passivo == True:
         tempo = "passato"
 
     infinito_presente = def_verbo.def_infinito_presente(verbo, modo, tempo)
@@ -172,7 +220,9 @@ while True:
 
     tempo = "presente"
 
-    if is_compound_indefiniti:
+    if is_compound_indefiniti == True:
+        tempo = "passato"
+    if is_compound_indefiniti_passivo == True:
         tempo = "passato"
 
     gerundio_presente = def_verbo.def_gerundio_presente(verbo, modo, tempo)
@@ -181,50 +231,98 @@ while True:
         print("verbo:", indicativo_presente[verb]["verbo"])
         print("modo:", indicativo_presente[verb]["modo"])
         print("tempo:", indicativo_presente[verb]["tempo"])
+        if is_ausiliare == False and passivo == True:
+            print("tipo: passivo")
+        if is_ausiliare == False and passivo == False:
+            print("tipo: attivo")
     elif verb in indicativo_imperfetto and is_congiuntivo == False:
         print("verbo:", indicativo_imperfetto[verb]["verbo"])
         print("modo:", indicativo_imperfetto[verb]["modo"])
         print("tempo:", indicativo_imperfetto[verb]["tempo"])
+        if is_ausiliare == False and passivo == True:
+            print("tipo: passivo")
+        if is_ausiliare == False and passivo == False:
+            print("tipo: attivo")
     elif verb in indicativo_passato_remoto and is_congiuntivo == False:
         print("verbo:", indicativo_passato_remoto[verb]["verbo"])
         print("modo:", indicativo_passato_remoto[verb]["modo"])
         print("tempo:", indicativo_passato_remoto[verb]["tempo"])
+        if is_ausiliare == False and passivo == True:
+            print("tipo: passivo")
+        if is_ausiliare == False and passivo == False:
+            print("tipo: attivo")
     elif verb in indicativo_futuro_semplice and is_congiuntivo == False:
         print("verbo:", indicativo_futuro_semplice[verb]["verbo"])
         print("modo:", indicativo_futuro_semplice[verb]["modo"])
         print("tempo:", indicativo_futuro_semplice[verb]["tempo"])
+        if is_ausiliare == False and passivo == True:
+            print("tipo: passivo")
+        if is_ausiliare == False and passivo == False:
+            print("tipo: attivo")
     elif verb in congiuntivo_presente and is_congiuntivo == True:
         print("verbo:", congiuntivo_presente[verb]["verbo"])
         print("modo:", congiuntivo_presente[verb]["modo"])
         print("tempo:", congiuntivo_presente[verb]["tempo"])
+        if is_ausiliare == False and passivo == True:
+            print("tipo: passivo")
+        if is_ausiliare == False and passivo == False:
+            print("tipo: attivo")
     elif verb in congiuntivo_imperfetto and is_congiuntivo == True:
         print("verbo:", congiuntivo_imperfetto[verb]["verbo"])
         print("modo:", congiuntivo_imperfetto[verb]["modo"])
         print("tempo:", congiuntivo_imperfetto[verb]["tempo"])
+        if is_ausiliare == False and passivo == True:
+            print("tipo: passivo")
+        if is_ausiliare == False and passivo == False:
+            print("tipo: attivo")
     elif verb in condizionale_presente and is_congiuntivo == False:
         print("verbo:", condizionale_presente[verb]["verbo"])
         print("modo:", condizionale_presente[verb]["modo"])
         print("tempo:", condizionale_presente[verb]["tempo"])
+        if is_ausiliare == False and passivo == True:
+            print("tipo: passivo")
+        if is_ausiliare == False and passivo == False:
+            print("tipo: attivo")
     elif verb in imperativo_presente and is_congiuntivo == False:
         print("verbo:", imperativo_presente[verb]["verbo"])
         print("modo:", imperativo_presente[verb]["modo"])
         print("tempo:", imperativo_presente[verb]["tempo"])
+        if is_ausiliare == False and passivo == True:
+            print("tipo: passivo")
+        if is_ausiliare == False and passivo == False:
+            print("tipo: attivo")
     elif pronoun in infinito_presente and is_congiuntivo == False:
         print("verbo:", infinito_presente[pronoun]["verbo"])
         print("modo:", infinito_presente[pronoun]["modo"])
         print("tempo:", infinito_presente[pronoun]["tempo"])
+        if is_ausiliare == False and passivo == True:
+            print("tipo: passivo")
+        if is_ausiliare == False and passivo == False:
+            print("tipo: attivo")
     elif verb in participio_presente and is_congiuntivo == False:
         print("verbo:", participio_presente[verb]["verbo"])
         print("modo:", participio_presente[verb]["modo"])
         print("tempo:", participio_presente[verb]["tempo"])
+        if is_ausiliare == False and passivo == True:
+            print("tipo: passivo")
+        if is_ausiliare == False and passivo == False:
+            print("tipo: attivo")
     elif verb in participio_passato and is_congiuntivo == False:
         print("verbo:", participio_passato[verb]["verbo"])
         print("modo:", participio_passato[verb]["modo"])
         print("tempo:", participio_passato[verb]["tempo"])
+        if is_ausiliare == False and passivo == True:
+            print("tipo: passivo")
+        if is_ausiliare == False and passivo == False:
+            print("tipo: attivo")
     elif verb in gerundio_presente and is_congiuntivo == False:
         print("verbo:", gerundio_presente[verb]["verbo"])
         print("modo:", gerundio_presente[verb]["modo"])
         print("tempo:", gerundio_presente[verb]["tempo"])
+        if is_ausiliare == False and passivo == True:
+            print("tipo: passivo")
+        if is_ausiliare == False and passivo == False:
+            print("tipo: attivo")
     else:
         print("errore_verbo")
 
@@ -272,5 +370,5 @@ while True:
 
     input_fine = input("continua o esci? ")
 
-    if input_fine == "esci":
+    if input_fine == "esci" or input_fine == "q" or input_fine == "e":
         sys.exit(0)
